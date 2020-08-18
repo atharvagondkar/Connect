@@ -30,16 +30,17 @@ timeOnline = {}
 
 io.on('connection', (socket) => {
 
-	socket.on('join-call', (path) => {
+	socket.on('join-call', (path,username) => {
 		if(connections[path] === undefined){
 			connections[path] = []
 		}
 		connections[path].push(socket.id)
 
 		timeOnline[socket.id] = new Date()
+		console.log(connections,socket.id)
 
 		for(let a = 0; a < connections[path].length; ++a){
-			io.to(connections[path][a]).emit("user-joined", socket.id, connections[path])
+			io.to(connections[path][a]).emit("user-joined", socket.id, connections[path],username)
 		}
 
 		if(messages[path] !== undefined){

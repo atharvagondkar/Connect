@@ -52,6 +52,7 @@ const peerConnectionConfig = {
 var socket = null
 var socketId = null
 var elms = 0
+var socket_user = {}
 
 class Room extends Component {
 	constructor(props) {
@@ -295,12 +296,15 @@ class Room extends Component {
 		socket.on('signal', this.gotMessageFromServer)
 
 		socket.on('connect', () => {
-			socket.emit('join-call', server_url+this.props.location.state.meet)
+			socket.emit('join-call', server_url+this.props.location.state.meet,this.state.username)
 			socketId = socket.id
 
 			socket.on('chat-message', this.addMessage)
 
 			socket.on('user-left', (id) => {
+				message.warning( socket_user[id],'left')
+				console.log("left id",id)
+				console.log('after left ',socket_user)
 				let video = document.querySelector(`[data-socket="${id}"]`)
 				if (video !== null) {
 					elms--
@@ -311,7 +315,10 @@ class Room extends Component {
 				}
 			})
 
-			socket.on('user-joined', (id, clients) => {
+			socket.on('user-joined', (id, clients,new_username) => {
+				message.success(new_username, " joined!")
+				socket_user[id]=new_username;
+				console.log(socket_user)
 				clients.forEach((socketListId) => {
 					connections[socketListId] = new RTCPeerConnection(peerConnectionConfig)
 					// Wait for their ice candidate       
