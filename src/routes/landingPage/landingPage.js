@@ -9,6 +9,7 @@ import logo from '../../assets/1.jpg';
 
 import { IconButton } from '@material-ui/core';
 import GitHubIcon from '@material-ui/icons/GitHub';
+import { message } from 'antd'
 
 class LandingPage extends Component {
   constructor(props) {
@@ -34,6 +35,14 @@ class LandingPage extends Component {
       // window.location.href = `/${url[url.length - 1]}`;
     }
   };
+
+  create_meet = () => {
+    var room_id = Math.random().toString(36).substring(2, 7)
+    console.log(room_id)
+    this.props.history.push(`/room`,{meet:room_id,jurl:window.location.href+"web/"+room_id+"/"+room_id.charCodeAt(0).toString()+room_id.charCodeAt(1).toString()+room_id.charCodeAt(2).toString() })
+    message.success("Meet created!")
+    
+  }
 
   render() {
     return (
@@ -84,7 +93,7 @@ class LandingPage extends Component {
             <Button
               className='b-ui'
               variant='outline-info'
-              onClick={this.join}
+              onClick={this.create_meet}
             >
               Create Meet
             </Button>
