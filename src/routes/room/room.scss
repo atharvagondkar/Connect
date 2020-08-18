@@ -21,6 +21,8 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
+    // overflow-x: scroll;
+    // overflow-y: scroll;
 }
 
 .div-send-msg {
@@ -37,4 +39,8 @@ body {
     bottom: 24px;
     width: 100%;
     height: auto;
+}
+
+video {
+
 }

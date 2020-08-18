@@ -340,8 +340,8 @@ class Room extends Component {
 
 							let video = document.createElement('video')
 
-							let css = {minWidth: cssMesure.minWidth, minHeight: cssMesure.minHeight, maxHeight: "100%", margin: "10px",
-								borderStyle: "solid", borderColor: "#bdbdbd", objectFit: "fill"}
+							let css = {minWidth: cssMesure.minWidth, minHeight: cssMesure.minHeight, maxHeight: "100%", margin: "10px", 
+							borderStyle: "solid",borderWidth:"thin",borderColor: "#bdbdbd", objectFit: "fill"}
 							for(let i in css) video.style[i] = css[i]
 
 							video.style.setProperty("width", cssMesure.width)
@@ -493,7 +493,7 @@ class Room extends Component {
 
 						<div style={{ justifyContent: "center", textAlign: "center", paddingTop: "40px" }}>
 							<video id="my-video" ref={this.localVideoref} autoPlay muted style={{
-								borderStyle: "solid",borderColor: "#bdbdbd",objectFit: "fill",width: "60%",height: "30%"}}></video>
+								borderStyle: "solid",borderWidth:"thin",borderColor: "#bdbdbd",objectFit: "fill",width: "60%",height: "30%"}}></video>
 						</div>
 					</div>
 					:
@@ -553,7 +553,7 @@ class Room extends Component {
 						<div className="container">
 							<Row id="main" className="flex-container" style={{ margin: 0, padding: 0 }}>
 								<video id="my-video" ref={this.localVideoref} autoPlay muted style={{
-									borderStyle: "solid",borderColor: "#bdbdbd",margin: "10px",objectFit: "fill",
+									borderStyle: "solid",borderColor: "#bdbdbd",borderWidth:'thin',margin: "10px",objectFit: "fill",
 									width: "100%",height: "100%"}}></video>
 							</Row>
 						</div>
