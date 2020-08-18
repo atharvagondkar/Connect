@@ -323,7 +323,7 @@ class Room extends Component {
 					// Wait for their ice candidate       
 					connections[socketListId].onicecandidate = function (event) {
 						if (event.candidate != null) {
-							socket.emit('signal', socketListId, JSON.stringify({ 'ice': event.candidate }),this.state.username)
+							socket.emit('signal', socketListId, JSON.stringify({ 'ice': event.candidate }))
 						}
 					}
 

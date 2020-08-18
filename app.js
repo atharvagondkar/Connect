@@ -53,8 +53,8 @@ io.on('connection', (socket) => {
 		console.log(path, connections[path])
 	})
 
-	socket.on('signal', (toId, message,username) => {
-		io.to(toId).emit('signal', socket.id, message,username)
+	socket.on('signal', (toId, message) => {
+		io.to(toId).emit('signal', socket.id, message)
 	})
 
 	socket.on('chat-message', (data, sender) => {
