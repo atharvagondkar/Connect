@@ -87,14 +87,14 @@ class LandingPage extends Component {
           <div className={`i-div ${this.state.hide_ele ? '' : 'hidden'}`}>
             <Button
               className='b-ui'
-              variant='outline-primary'
+              variant='outline-dark'
               onClick={this.toggleMeet}
             >
               Join Meet
             </Button>
             <Button
               className='b-ui'
-              variant='outline-info'
+              variant='outline-primary'
               onClick={this.create_meet}
             >
               Create Meet

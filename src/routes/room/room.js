@@ -234,10 +234,11 @@ class Room extends Component {
 		})
 	}
 
-	gotMessageFromServer = (fromId, message) => {
+	gotMessageFromServer = (fromId, message, new_username) => {
 		var signal = JSON.parse(message)
-
 		if (fromId !== socketId) {
+			socket_user[fromId]=new_username;
+			console.log(socket_user);
 			if (signal.sdp) {
 				connections[fromId].setRemoteDescription(new RTCSessionDescription(signal.sdp)).then(() => {
 					if (signal.sdp.type === 'offer') {
@@ -317,14 +318,12 @@ class Room extends Component {
 
 			socket.on('user-joined', (id, clients,new_username) => {
 				message.success(new_username, " joined!")
-				socket_user[id]=new_username;
-				console.log(socket_user)
 				clients.forEach((socketListId) => {
 					connections[socketListId] = new RTCPeerConnection(peerConnectionConfig)
 					// Wait for their ice candidate       
 					connections[socketListId].onicecandidate = function (event) {
 						if (event.candidate != null) {
-							socket.emit('signal', socketListId, JSON.stringify({ 'ice': event.candidate }))
+							socket.emit('signal', socketListId, JSON.stringify({ 'ice': event.candidate }),this.state.username)
 						}
 					}
 
