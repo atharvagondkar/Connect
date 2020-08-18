@@ -6,12 +6,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 100%;
     // font-size: calc(10px + 2vmin);
     // background-image: url('../../assets/1.jpg');
     // background-size: cover;
     // background-position: center;
     // background-repeat: no-repeat;
-    background-color: #fff;
+    // background-color: rgba(0,0,0,0.8);
+    background-color: #282a36;
 }
 
 .logo-name{
@@ -37,17 +39,23 @@
 }
 
 .c-body{
+    background-image: url('../../assets/alienfriend.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 20px;
+    height: 100%;
+    width: 100%;
     // margin-bottom: -25%;
-    background-color: rgba(255, 255, 255, 0.75);
-    padding: 8% 5%;
-    border-radius: 10%;
+    // background-color: rgba(255, 255, 255, 0.75);
+    background-color: #fff;
+    // padding: 8% 8%;
+    // border-radius: 100%;
     z-index: 1;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .hidden {
@@ -63,10 +71,14 @@
     margin: 5%;
     text-align: center;
     min-width: 150px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
 }
 
 .img-logo{
+    background-image: url('../../assets/alienfriend.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     height: 100px;
     width: 100px;
     margin-bottom: 5%;
