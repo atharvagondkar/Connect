@@ -271,8 +271,8 @@ class Room extends Component {
 			width = "100%"
 			height = "100%"
 		} else if (elms === 2) {
-			width = "45%"
-			height = "100%"
+			width = "35%"
+			height = "50%"
 		} else if (elms === 3 || elms === 4) {
 			width = "35%"
 			height = "50%"
@@ -350,6 +350,7 @@ class Room extends Component {
 							video.srcObject = event.stream
 							video.autoplay = true
 							video.playsinline = true
+							// video.onClick = {}
 
 							main.appendChild(video)
 						}

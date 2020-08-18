@@ -42,5 +42,31 @@ body {
 }
 
 video {
-
+    transition: transform .2s;
+    background-color: #282a36;
 }
+
+video:active {
+    transform: scale(1.75);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    align-self: center;
+}
+video:focus {
+    transform: scale(1.75);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    align-self: center;
+  }
+  :target {
+    transform: scale(1.75);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    align-self: center;
+  }
